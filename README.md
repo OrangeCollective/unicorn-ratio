@@ -1,6 +1,6 @@
 # The Unicorn Ratio
 
-A framework for optimizing startup portfolio construction when investing in cohorts, using the Kelly Criterion and Binomial Distribution. Built for [Orange Collective](https://orangecollective.vc) ([Live Demo](https://orangecollective.vc/unicorn-ratio).
+A framework for optimizing startup portfolio construction when investing in cohorts, using the Kelly Criterion and Binomial Distribution. Built for [Orange Collective](https://orangecollective.vc) ([Live Demo](https://orangecollective.vc/unicorn-ratio)).
 
 ## Important Disclaimer
 

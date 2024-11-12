@@ -1,6 +1,7 @@
-# The Unicorn Ratio
+![UnicornRatioByOrangeCollective](https://github.com/user-attachments/assets/e79d3145-fe09-40f6-b595-c7efc2218565)
 
-A framework for optimizing startup portfolio construction when investing in cohorts, using the Kelly Criterion and Binomial Distribution. Built for [Orange Collective](https://orangecollective.vc) ([Live Demo](https://orangecollective.vc/unicorn-ratio)).
+# The Unicorn Ratio
+A framework for optimizing startup portfolio construction when investing in cohorts, using the Kelly Criterion and Binomial Distribution. Built by [Orange Collective](https://orangecollective.vc) ([Live Demo](https://orangecollective.vc/unicorn-ratio)).
 
 ## Important Disclaimer
 
@@ -16,8 +17,8 @@ This tool is for **educational and research purposes only**. It provides a mathe
 
 The Unicorn Ratio helps investors determine the optimal number of startups to invest in for a given cohort. It provides two different approaches:
 
-1. **Kelly Criterion**: Optimize portfolio size and check amounts based on probability of success and potential returns
-2. **Binomial Distribution**: Analyze how portfolio size affects probability of finding unicorns
+1. **[Kelly Criterion](https://www.investopedia.com/articles/trading/04/091504.asp)**: Optimize portfolio size and check amounts based on probability of success and potential returns
+2. **[Binomial Distribution](https://www.investopedia.com/terms/b/binomialdistribution.asp)**: Analyze how portfolio size affects probability of finding unicorns
 
 Built with:
 
@@ -26,6 +27,85 @@ Built with:
 - [Tailwind CSS](https://tailwindcss.com)
 - [Recharts](https://recharts.org)
 - [KaTeX](https://katex.org)
+
+## Key Assumptions
+
+- **Binary Outcomes**: Each investment either becomes a unicorn or does not.
+- **Fixed Success Probability**: Assumes a stable probability of a startup becoming a unicorn.
+- **Independent Investments**: Each investment’s outcome is independent of others.
+- **Perfect Capital Allocation**: Assumes that capital can be allocated optimally across investments.
+
+## Inputs
+
+1. **Unicorn Rate**: The estimated probability of any given startup in the cohort becoming a unicorn.
+2. **Number of Companies**: The total number of startups in the cohort available for investment.
+3. **Fund Allocation**: The amount of capital available to invest in the cohort.
+
+These inputs are used to calculate the optimal portfolio size and check amount per investment based on the selected model.
+
+## Mathematical Models
+
+### 1. Kelly Criterion
+
+The **Kelly Criterion** is a formula that determines the proportion of capital to allocate to each investment based on the probability of success (i.e. historical unicorn rate).
+
+**Formula**: 
+
+<img width="156" alt="image" src="https://github.com/user-attachments/assets/1dbed420-1782-42f5-a36e-2de22a93505b">
+
+where:
+- \( f \) = fraction of capital to allocate to each investment
+- \( p \) = probability of success (unicorn rate)
+- \( b \) = odds multiplier (e.g., the return multiple if the startup becomes a unicorn)
+
+### 2. Binomial Distribution
+
+The **Binomial Distribution** model analyzes the probability of achieving a desired number of unicorns (e.g., 1 unicorn) given a set number of investments and a fixed probability of success. 
+
+**Formula**:
+
+For a binomial distribution, the probability of picking at least 1 unicorn is:
+
+<img width="348" alt="image" src="https://github.com/user-attachments/assets/9472867a-d957-4326-8a19-6d5046f904e8">
+
+where:
+- \( n \) = number of investments
+- \( k \) = desired number of unicorns
+- \( p \) = probability of each startup becoming a unicorn
+
+## Using the App
+
+1. **Set Assumptions**: Enter the unicorn rate, available capital, and choose the desired model (Kelly Criterion or Binomial Distribution).
+2. **Interpret Outputs**:
+   - **Kelly Criterion** will suggest a specific check size per startup based on the probability of success.
+   - **Binomial Distribution** will display a probability curve illustrating the likelihood of achieving a target number of unicorns as the portfolio size varies.
+3. **Optimize Strategy**: Use the results to make informed decisions about how many startups to invest in and at what check size to maximize potential unicorn outcomes in a capital-efficient way.
+
+## Model Limitations
+
+The mathematical models used in this tool have several important limitations:
+
+1. **Simplified Assumptions**: The models assume:
+   - Binary outcomes (unicorn or not).
+   - Fixed probabilities of success.
+   - Independent outcomes between investments.
+   - Perfect capital allocation.
+
+2. **Historical Data**: Past unicorn rates may not predict future outcomes.
+
+3. **Skill Assessment**: The models rely on an accurate self-assessment of the probability of success. Applying a higher skill level effectively reduces the cohort size.
+
+4. **Market Dynamics**: The models do not account for:
+   - Market cycles.
+   - Sector-specific trends.
+   - Competition for deals.
+   - Follow-on investments.
+
+5. **Portfolio Management**: Excludes factors such as:
+   - Portfolio diversification.
+   - Investment staging.
+   - Pro-rata rights.
+   - Reserve capital.
 
 ## Project Structure
 
@@ -63,35 +143,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Model Limitations
-
-The mathematical models used in this tool have several important limitations:
-
-1. **Simplified Assumptions**: The models assume:
-
-   - Binary outcomes (unicorn or not)
-   - Fixed probabilities of success
-   - Independent outcomes between investments
-   - Perfect capital allocation
-
-2. **Historical Data**: Past unicorn rates may not predict future outcomes
-
-3. **Skill Assessment**: The models rely on accurate self-assessment of investment skill
-
-4. **Market Dynamics**: Does not account for:
-
-   - Market cycles
-   - Sector-specific trends
-   - Competition for deals
-   - Follow-on investments
-
-5. **Portfolio Management**: Excludes considerations like:
-   - Portfolio diversification
-   - Investment staging
-   - Pro-rata rights
-   - Reserve capital
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ## About Orange Collective
 

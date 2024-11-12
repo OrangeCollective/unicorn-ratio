@@ -111,7 +111,7 @@ export default function HomePage() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <a
-              href="https://github.com/davecyen/unicorn-ratio"
+              href="https://github.com/orangecollective/unicorn-ratio"
               target="_blank"
               rel="noopener noreferrer"
             >

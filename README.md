@@ -54,7 +54,7 @@ unicorn-ratio/
 
 ```bash
 # Clone the repository
-git clone https://github.com/davecyen/unicorn-ratio.git
+git clone https://github.com/orangecollective/unicorn-ratio.git
 
 # Install dependencies
 npm install
